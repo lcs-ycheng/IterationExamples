@@ -29,11 +29,16 @@ import PlaygroundSupport
 let canvas = Canvas(width: 300, height: 300)
 
 // Below this line, try combining a loop and a single statement to generate the goal
-var sum = 10
-for value in 1...8 {
-    sum = sum - value
+canvas.defaultLineWidth = 1
+// draw the "rungs" of a ladder
+for y in stride(from: 10, to: 300, by: 20){
+    y
+    canvas.drawLine(fromX: y, fromY: 0, toX: 300, toY: y)
+    canvas
 }
-sum //equales -26 at this point
+
+
+
 /*:
  ## Template code
  The code below is necessary to see results in the Assistant Editor at right. Please do not remove.
