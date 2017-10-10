@@ -25,16 +25,16 @@ sum         // equals 10 at this point
  For example, here how to use this type of loop to create a ladder image.
  */
 // Create canvas
-let canvas = Canvas(width: 300, height: 400)
+let canvas = Canvas(width: 280, height: 200)
 
 //make a loop to draw 10 rectangle with increasing
 canvas.drawShapesWithBorders = false
-for i in stride(from: 0, to: 500, by: 50) {
+for i in stride(from: 5, to: 250, by: 40) {
     
     // changes the color
-    canvas.fillColor = Color(hue: 0, saturation: 100, brightness: i/5, alpha: 100)
+    canvas.fillColor = Color(hue: 0, saturation: 100, brightness: i/7, alpha: 240)
     //draw rectangle
-    canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: i, width: canvas.width, height: 50)
+    canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: i, width: canvas.width, height: 40)
 }
 
 PlaygroundPage.current.liveView = canvas.imageView
