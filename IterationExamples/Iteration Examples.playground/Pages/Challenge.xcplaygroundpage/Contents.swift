@@ -18,12 +18,15 @@ let canvas = Canvas(width: 300, height: 300)
 
 for x in stride(from: 25, to: 275, by: 10) {
     for y in stride(from: 275, to: 25, by: -10){
-       
-        canvas.drawLine(fromX: x-10, fromY: y-10, toX: x+10, toY: y+10)
+        let i = random(from: 1, toButNotIncluding: 3)
+        if i==1{
+            //drawincrasing line
+            canvas.drawLine(fromX: x-10, fromY: y-10, toX: x+10, toY: y+10)
+        }else{
         canvas.drawLine(fromX: x+10, fromY: y-10, toX: x-10, toY: y+10)
     }
 }
-
+}
 
 
 
