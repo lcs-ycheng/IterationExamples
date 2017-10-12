@@ -16,19 +16,16 @@ let canvas = Canvas(width: 300, height: 300)
 
 // Below this line, try combining a loop and four statements that draw lines to generate the goal
 
-for y in stride(from: 0, to: 300, by: 20){
-    y
-    canvas.drawLine(fromX: y, fromY: 0, toX: 300, toY: y)
-    canvas
-
-    canvas.drawLine(fromX: y, fromY: 300, toX: 0, toY: y)
-    canvas
-
-    canvas.drawLine(fromX: 300-y, fromY: 300, toX: 300, toY: y)
-    canvas
-    
-    canvas.drawLine(fromX: y, fromY: 0, toX: 0, toY: 300-y)
+for x in stride(from: 25, to: 275, by: 10) {
+    for y in stride(from: 275, to: 25, by: -10){
+       
+        canvas.drawLine(fromX: x-10, fromY: y-10, toX: x+10, toY: y+10)
+        canvas.drawLine(fromX: x+10, fromY: y-10, toX: x-10, toY: y+10)
+    }
 }
+
+
+
 
 /*:
  ## Template code
