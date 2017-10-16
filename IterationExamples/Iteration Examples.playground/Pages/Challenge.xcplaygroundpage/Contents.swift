@@ -16,18 +16,30 @@ let canvas = Canvas(width: 300, height: 300)
 
 // Below this line, try combining a loop and four statements that draw lines to generate the goal
 
-for x in stride(from: 25, to: 275, by: 10) {
-    for y in stride(from: 275, to: 25, by: -10){
-        let i = random(from: 1, toButNotIncluding: 3)
-        if i==1{
-            //drawincrasing line
-            canvas.drawLine(fromX: x-10, fromY: y-10, toX: x+10, toY: y+10)
-        }else{
-        canvas.drawLine(fromX: x+10, fromY: y-10, toX: x-10, toY: y+10)
-    }
-}
-}
+canvas.drawShapesWithFill = true
+canvas.drawShapesWithBorders = false
 
+//changing the horizontal position
+for x in stride(from: 25, to: 325, by: 50) {
+ 
+    //changing the vertical position
+    for y in stride(from: 25, to: 325, by: 50){
+
+        //chose the color of the circle
+            let hue = random(from: 0, toButNotIncluding: 360)
+        
+        for i in stride(from: 50, to: 25, by: -10){
+
+        //Set color
+        canvas.fillColor = Color(hue: hue, saturation: i, brightness: 90, alpha: 100)
+        
+        //draw the circle
+            canvas.drawEllipse(centreX: x, centreY: y, width: i, height: i)
+          
+    
+}
+}
+}
 
 
 /*:
