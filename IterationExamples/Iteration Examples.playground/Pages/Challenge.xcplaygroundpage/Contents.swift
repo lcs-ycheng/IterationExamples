@@ -20,10 +20,10 @@ canvas.drawShapesWithFill = true
 canvas.drawShapesWithBorders = false
 
 //changing the horizontal position
-for x in stride(from: 25, to: 325, by: 50) {
+for x in stride(from: 5, to: 325, by: 50) {
  
     //changing the vertical position
-    for y in stride(from: 25, to: 325, by: 50){
+    for y in stride(from: 5, to: 325, by: 50){
 
         //chose the color of the circle
             let hue = random(from: 0, toButNotIncluding: 360)
@@ -31,10 +31,10 @@ for x in stride(from: 25, to: 325, by: 50) {
         for i in stride(from: 50, to: 25, by: -10){
 
         //Set color
-        canvas.fillColor = Color(hue: hue, saturation: i+20, brightness: 100, alpha: 100)
+        canvas.fillColor = Color(hue: i, saturation: hue, brightness: 100, alpha: 100)
         
-        //draw the circle
-           canvas.drawEllipse(centreX: x, centreY: y, width: i, height: i)
+        //draw the rectangle
+            canvas.drawRectangle(bottomLeftX: x, bottomLeftY: y, width: i, height: i)
            
           
     
@@ -42,6 +42,23 @@ for x in stride(from: 25, to: 325, by: 50) {
 }
 }
 
+//changing the horizontal positon
+for x in stride(from: 25, to: 325, by: 50) {
+    
+    //changing the vertical position
+    for y in stride(from: 25, to: 325, by: 50){
+        
+        //chose the color of the circle
+        let hue = random(from: 0, toButNotIncluding: 360)
+        for i in stride(from: 30, to: 15, by: -10){
+            
+            canvas.fillColor = Color(hue: hue-20, saturation: 100, brightness: i+80, alpha: 100)
+            
+            //draw the circle
+            canvas.drawEllipse(centreX: x, centreY: y, width: i, height: i)
+        }
+    }
+}
 /*:
  ## Template code
  The code below is necessary to see results in the Assistant Editor at right. Please do not remove.
