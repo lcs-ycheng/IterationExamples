@@ -31,7 +31,7 @@ for x in stride(from: 25, to: 325, by: 50) {
         for i in stride(from: 50, to: 25, by: -10){
 
         //Set color
-        canvas.fillColor = Color(hue: hue, saturation: i, brightness: 90, alpha: 100)
+        canvas.fillColor = Color(hue: hue, saturation: 90, brightness: i, alpha: 100)
         
         //draw the circle
             canvas.drawEllipse(centreX: x, centreY: y, width: i, height: i)
